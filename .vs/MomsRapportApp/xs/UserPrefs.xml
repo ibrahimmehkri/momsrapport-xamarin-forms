@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{48A75C2F-A137-47B4-9D7E-5CEBF3FD9823}|Default">
+  <MonoDevelop.Ide.ItemProperties.MomsRapportApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AA7CD8A9-4FAF-4839-8A7D-92FEFC33C39C" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MomsRapportApp" expanded="True">
+            <Node name="MomsRapportApp" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="EntryDetailsPage.xaml" expanded="True" selected="True" />
+                <Node name="SalesTaxReportPage.xaml" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.MomsRapportApp.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" FirstBuild="True" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

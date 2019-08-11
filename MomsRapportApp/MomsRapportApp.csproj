@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Data\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Validations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="TransactionDetailsPage.xaml" />
+    <EmbeddedResource Remove="MainPage.xaml" />
+    <EmbeddedResource Remove="MainPage.xaml" />
+    <EmbeddedResource Remove="Views\MainPage.xaml" />
+    <EmbeddedResource Remove="Views\MainPage.xaml" />
+    <EmbeddedResource Remove="Views\TransactionDetailsPage.xaml" />
+    <EmbeddedResource Remove="MainPage.xaml" />
+    <EmbeddedResource Remove="Views\NewEntryPage.xaml" />
+    <EmbeddedResource Remove="AllEntriesPage.xaml" />
+    <EmbeddedResource Remove="Views\HomePage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\MainPage.xaml.cs" />
+    <Compile Remove="Views\TransactionDetailsPage.xaml.cs" />
+    <Compile Remove="Views\NewEntryPage.xaml.cs" />
+    <Compile Remove="Converters\StringToDoubleConverter.cs" />
+    <Compile Remove="AllEntriesPage.xaml.cs" />
+    <Compile Remove="Data\AllAcounts.cs" />
+    <Compile Remove="Converters\BoolToStringConverter.cs" />
+    <Compile Remove="Data\AccountsData.cs" />
+    <Compile Remove="Data\Accounts.cs" />
+    <Compile Remove="ViewModels\ListViewModel.cs" />
+    <Compile Remove="Data\DataTransactions.cs" />
+    <Compile Remove="Views\HomePage.xaml.cs" />
+    <Compile Remove="Views\DetailEntryPage.xaml.cs" />
+    <Compile Remove="Behaviors\ItemSelectedToCommandBehavior.cs" />
+    <Compile Remove="UserData\TransactionData.cs" />
+    <Compile Remove="UserData\TransactionRepository.cs" />
+    <Compile Remove="UserData\TransactionDatabase.cs" />
+  </ItemGroup>
+</Project>

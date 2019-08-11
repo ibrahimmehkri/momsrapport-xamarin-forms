@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MomsRapportApp.Views.TransactionDetailsPage">
+    <ContentPage.Content>
+        
+        <StackLayout Padding="15, 50, 15, 15"
+                     Spacing="15"
+                     VerticalOptions="FillAndExpand">
+            
+            <Label Text="Entry Details"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            
+            <Image Source="https://photos.gograph.com/thumbs/CSP/CSP080/invoice-stock-illustration_k46816342.jpg"
+                   HorizontalOptions="Center"
+                   WidthRequest="100"/>
+            
+            <Label Text="Date"
+                   FontSize="Medium"/>
+            
+            <Label Text="Some date"
+                   FontSize="Micro"/>
+            
+            <Label Text="Description"
+                   FontSize="Medium"/>
+            
+            <Label Text="Some description"
+                   FontSize="Micro"/>
+            
+            <Label Text="Account"
+                   FontSize="Medium"/>
+            
+            <Label Text="Some account name"
+                   FontSize="Micro"/>
+            
+            <Frame BackgroundColor="Blue">
+                <Label Text="Total Amount"
+                       TextColor="White"
+                       FontAttributes="Bold"/>    
+            </Frame>
+            
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MomsRapportApp.Views.EntryPage"
+             xmlns:viewModels="clr-namespace:MomsRapportApp.ViewModels"
+             xmlns:converters="clr-namespace:MomsRapportApp.Converters"
+             xmlns:behaviors="clr-namespace:MomsRapportApp.Behaviors">
+    <ContentPage.BindingContext>
+        <Binding Source="{x:Static Application.Current}" Path="AppData.ActiveTransaction"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            
+            <StackLayout Padding="20"
+                         Spacing="15"
+                         VerticalOptions="FillAndExpand">
+
+                <Grid>
+                    <ImageButton Source="https://img.icons8.com/ios/50/000000/circled-left-2.png"
+                                 Grid.Column="0"
+                                 HorizontalOptions="Start"
+                                 Clicked="GoBackButtonClicked"/>
+                    <ImageButton Source="https://img.icons8.com/ios/50/000000/cancel.png"
+                                 Grid.Column="1"
+                                 HorizontalOptions="End"
+                                 Clicked="CancelButtonClicked"/>
+                </Grid>
+                
+                <Label Text="Create Entry"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <ImageButton Source="https://img.icons8.com/ios/50/000000/printed-ocr.png"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"/>
+                    <Label Text="Scan Invoice"
+                           FontSize="Micro"
+                           HorizontalOptions="Center"   
+                           VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <Switch Margin="5"
+                            IsToggled="{Binding Path=IsIncome}"
+                            x:Name="switch"/>
+                    <Label Margin="5"
+                           Text="Expense"
+                           VerticalOptions="Center">
+                        <Label.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsIncome}" 
+                                         Value="true"
+                                         TargetType="Label">
+                                <Setter Property="Text" Value="Income"/>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </StackLayout>
+                <Entry Placeholder="Amount"
+                       HeightRequest="50"
+                       Text="{Binding Path=Amount, Mode=OneWayToSource}"
+                       Keyboard="Numeric"
+                       >
+                    <Entry.Behaviors>
+                        <behaviors:OnEntryUnfocusedBehavior />
+                    </Entry.Behaviors>
+                </Entry>
+                
+                <Entry Placeholder="Description"
+                       HeightRequest="50"
+                       Text="{Binding Path=Description, Mode=OneWayToSource}"
+                       Keyboard="Text"/>
+                
+                <DatePicker HeightRequest="50"
+                            Date="{Binding Path=Date}"
+                            Format="MMMM dd, yyyy"
+                            x:Name="datePicker"/>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Path=Moms, StringFormat='Moms: {0}%'}"
+                           Margin="5"
+                           VerticalOptions="Center"/>
+                    <Stepper Margin="5"
+                             Value="{Binding Path=Moms}"/>
+                </StackLayout>
+                
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

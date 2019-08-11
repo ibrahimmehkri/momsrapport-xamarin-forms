@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MomsRapportApp.Views.EntryDetailsPage"
+             xmlns:local="clr-namespace:MomsRapportApp.ViewModels"
+             xmlns:converters="clr-namespace:MomsRapportApp.Converters">
+    <ContentPage.BindingContext>
+        <Binding Source="{x:Static Application.Current}" Path="AppData.ActiveTransaction"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:KronaFormatConverter x:Key="KronaFormatConv"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+            
+        <StackLayout Padding="20"
+                     Spacing="15">
+            
+           <ImageButton Source="https://img.icons8.com/ios/50/000000/circled-left-2.png"
+                        HorizontalOptions="Start"
+                        Clicked="Handle_Clicked"/>
+            
+            <Label Text="{Binding Date, StringFormat='{0:dddd dd MMMM yyyy}'}"
+                   TextColor="Gray"
+                   FontSize="Small"/>
+            
+            <Label Text="{Binding Description}"
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            
+            <Label Text="{Binding Amount, Converter={StaticResource KronaFormatConv}}"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+            
+            </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

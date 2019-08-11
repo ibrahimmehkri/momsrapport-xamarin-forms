@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MomsRapportApp.Views.SalesTaxReportPage"
+             xmlns:converters="clr-namespace:MomsRapportApp.Converters">
+    <ContentPage.BindingContext>
+        <Binding Source="{x:Static Application.Current}" Path="AppData"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:KronaFormatConverter x:Key="KronaFormatConv"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="20"
+                     Spacing="15">
+            <ImageButton Source="https://img.icons8.com/ios/50/000000/circled-left-2.png"
+                        HorizontalOptions="Start"
+                        Clicked="Handle_Clicked"/>
+
+            <Label Text="Sales Tax Report"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+
+            <Picker Title="Select Account"
+                    ItemsSource="{Binding Accounts}"
+                    SelectedItem="{Binding ActiveAccount}"
+                    SelectedIndexChanged="OnSelectedIndexChanged"/>
+
+            <ListView x:Name="expensesListView"
+                      SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding Amount, Converter={StaticResource KronaFormatConv}}" Grid.Column="0"/>
+                                <Label Text="{Binding Date, StringFormat='{0:D}'}" Grid.Column="1"/>
+                                <Label Text="{Binding Moms, StringFormat='{0}%'}" Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label x:Name="totalSalesTaxPaid" Text="{Binding TotalSalesTaxPaid, Converter={StaticResource KronaFormatConv}}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

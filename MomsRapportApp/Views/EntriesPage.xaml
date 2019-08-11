@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MomsRapportApp.Views.EntriesPage"
+             xmlns:viewModels="clr-namespace:MomsRapportApp.ViewModels"
+             xmlns:behaviors="clr-namespace:MomsRapportApp.Behaviors"
+             xmlns:converters="clr-namespace:MomsRapportApp.Converters">
+    
+    <ContentPage.BindingContext>
+        <Binding Source="{x:Static Application.Current}" Path="AppData"/>    
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:KronaFormatConverter x:Key="KronaFormatConv"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+        
+    <ContentPage.Content>
+        <StackLayout Padding="20"
+                     Spacing="15">
+            
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="End"
+                         Spacing="15">
+                <ImageButton Source="https://img.icons8.com/ios/50/000000/more.png"
+                         Clicked="OnMoreButtonClicked"
+                         />
+                <ImageButton Source="https://img.icons8.com/ios/50/000000/add.png"
+                         Clicked="OnAddEntryClicked"
+                         />    
+            </StackLayout>
+            
+            <Label Text="Accounts"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+
+            <Picker ItemsSource="{Binding Accounts}"
+                    Title="Select Account"
+                    SelectedItem="{Binding ActiveAccount}"/>
+
+            <ListView ItemsSource="{Binding ActiveAccount.Transactions}"
+                      SeparatorVisibility="None"
+                      ItemSelected="OnItemClicked">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Amount, Converter={StaticResource KronaFormatConv}}"
+                                  Detail="{Binding Description}"
+                                  DetailColor="Gray"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>    
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

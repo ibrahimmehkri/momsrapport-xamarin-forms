@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d" 
+             x:Class="MomsRapportApp.MainPage">
+    
+    <ScrollView>
+    
+        <StackLayout Padding="15, 50, 15, 15"
+                     Spacing="15"
+                     VerticalOptions="FillAndExpand">
+            
+            <Label Text="Create Entry"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+        
+        <ImageButton Source="https://cdn4.iconfinder.com/data/icons/world-travel-guide/512/travel-05-256.png"
+                     WidthRequest="75"
+                     HorizontalOptions="Center"/>
+        
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center">
+            <Switch x:Name="switch"
+                    Margin="5"/>
+            <Label Text="Expense"
+                   Margin="5"
+                   VerticalOptions="Center"/>
+        </StackLayout>
+        
+        <Entry Placeholder="Amount"
+               HeightRequest="50"/>
+        
+        <Entry Placeholder="Description"
+               HeightRequest="50"/>
+        
+        <Entry Placeholder="Date"
+               HeightRequest="50"/>
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Moms: 5%"
+                   Margin="5"
+                   VerticalOptions="Center"
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            <Stepper Margin="5"/>
+        </StackLayout>
+        
+        <Picker Title="Account"
+                HeightRequest="50"/>
+            
+        <Button Text="Add"
+                BackgroundColor="Blue"
+                TextColor="White"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                Margin="0,40,0,0"/>
+        
+    </StackLayout>
+
+        
+    </ScrollView>
+    
+    
+</ContentPage>
