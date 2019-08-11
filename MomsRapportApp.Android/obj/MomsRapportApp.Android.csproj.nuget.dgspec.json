@@ -21,6 +21,7 @@
           "monoandroid90"
         ],
         "sources": {
+          "/Users/ibrahimmehkri/Documents/C#/XamarinSamples/xamarin-forms-book-samples/Libraries/SchoolOfFineArt": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -95,6 +96,7 @@
           "netstandard2.0"
         ],
         "sources": {
+          "/Users/ibrahimmehkri/Documents/C#/XamarinSamples/xamarin-forms-book-samples/Libraries/SchoolOfFineArt": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
